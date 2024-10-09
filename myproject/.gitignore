@@ -1,0 +1,32 @@
+# Ignore Python bytecode
+*.pyc
+__pycache__/
+
+# Ignore database files
+db.sqlite3
+
+# Ignore virtual environments
+env/
+venv/
+
+# Ignore system and user files
+../AppData/
+../Dropbox/
+../Downloads/
+../Documents/
+../OneDrive/
+../*.dat
+../*.ini
+../Favorites/
+../Contacts/
+../Creative Cloud Files*/
+../Cisco Packet Tracer*/
+../Music/
+../Videos/
+../Searches/
+../Saved Games/
+../battery-report.html
+../ntuser.dat*
+../ntuser.ini
+../vmlogs/
+../inst.ini
