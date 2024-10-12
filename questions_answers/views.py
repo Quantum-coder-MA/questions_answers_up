@@ -39,6 +39,7 @@ def questions_answers(request):
 
         return render(request, 'questions_answers.html', payload)
 
+
 def get_questions_answers(request):
     try:
         question_objs = Question.objects.all()
