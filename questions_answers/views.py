@@ -11,9 +11,8 @@ def home(request):
     context = {'categories': Category.objects.all()}
     
     if request.GET.get('category'):
-        category = request.GET.get('category')
-        url = reverse('questions_answers') + f'?category={category}'
-        return redirect(url)
+        return redirect(f'/questions_answers/?category={request.GET.get('category')}')
+
     
     return render(request, 'home.html', context)
 
@@ -32,7 +31,7 @@ def questions_answers(request):
                 "category": question.category.category_name,
                 "question_text": question.question_text,
                 "marks": question.marks,
-                "answer": question.get_Answer()
+                "answers": question.get_Answer()
             })
         
         payload = {'data': data}
@@ -114,7 +113,8 @@ def submit(request):
             'correct_answers': correct_answers,
             'user_answers': user_answers,
         }
-
+        
 
 
         return JsonResponse(context)
+    return HttpResponse("Method not allowed", status=405)
